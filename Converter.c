@@ -37,7 +37,7 @@ int main ()
     switch (category)
     {
     case 'T':
-        T_START: //Reference Point
+        Temperature: //Reference Point
         printf("\nWelcome to Temperature Converter!\n");
         printf("Which unit do you wish to convert from?\n");
         printf("Press K for Kelvin\n");
@@ -51,7 +51,7 @@ int main ()
         case 'K':
             printf("\nInput the Kelvin value you wish to convert:\n");
             scanf("%lf", &value);
-            K_Start: // Reference point
+            Kelvin: // Reference point
             printf("\nWhich unit do you wish to convert this to?\n");
             printf("Press C for Celsius\n");
             printf("Press F for Fahrenheit\n");
@@ -69,20 +69,20 @@ int main ()
             }
             else if (tempUnit2 == 'X')
             {
-                goto T_START;
+                goto Temperature;
             }
             else
             {
                 printf("ERROR! Invalid Input!\n");
                 Sleep(500);
-                goto K_Start;
+                goto Kelvin;
             }
             break;
 
         case 'C':
             printf("\nInput the Celsius value you wish to convert:\n");
             scanf("%lf", &value);     
-            C_Start:
+            Celsius:
             printf("\nWhich unit do you wish to convert this to?\n");
             printf("Press K for Kelvin\n");
             printf("Press F for Fahrenheit\n");
@@ -101,20 +101,20 @@ int main ()
             }
             else if(tempUnit2 == 'X')
             {
-                goto T_START;
+                goto Temperature;
             }
             else
             {
                 printf("ERROR! Invalid Input!\n");
                 Sleep(500);
-                goto C_Start;
+                goto Celsius;
             }
             break;
         
         case 'F':
             printf("\nInput the Fahrenheit value you wish to convert:\n");
             scanf("%lf", &value);
-            F_Start:
+            Fahrenheit:
             printf("\nWhich unit do you wish to convert this to?\n");
             printf("Press K for Kelvin\n");
             printf("Press C for Celsius\n");
@@ -133,13 +133,13 @@ int main ()
             }
             else if (tempUnit2== 'X')
             {
-                goto T_START;
+                goto Temperature;
             }
             else
             {
                 printf("ERROR! Invalid Input!\n");
                 Sleep(500);
-                goto F_Start;
+                goto Fahrenheit;
             }
             break;
         case 'X': {
@@ -150,87 +150,99 @@ int main ()
         default:
             printf("ERROR! Enter Valid Temperature Unit\n");
             Sleep(500);
-            goto T_START;
+            goto Temperature;
             break;
         }
         break;
 
-        case 'K':
-            printf("\nInput the Kelvin value you wish to convert:\n");
+    case 'M':
+        Mass: //Reference Point
+        printf("\nWelcome to Mass Converter!\n");
+        printf("Which unit do you wish to convert from?\n");
+        printf("Press G for KiloGrams\n");
+        printf("Press T for Tonnes\n");
+        printf("Press P for Kilopounds\n");
+        printf("Press X to go back\n\t");
+        scanf("%s", &massUnit1);
+        
+        switch (massUnit1)
+        {
+        case 'G':
+            printf("\nInput the Kilogram value you wish to convert:\n");
             scanf("%lf", &value);
-            K_Start: // Reference point
+            Kilograms: // Reference point
             printf("\nWhich unit do you wish to convert this to?\n");
-            printf("Press C for Celsius\n");
-            printf("Press F for Fahrenheit\n");
+            printf("Press T for Tonnes\n");
+            printf("Press P for Kilopounds\n");
             printf("Press X to go back\n\t");
-            scanf("%s", &tempUnit2);
-            if (tempUnit2 =='C')
+            scanf("%s", &massUnit2);
+            if (massUnit2 =='T')
             {
-                printf("\n%0.2lf Kelvin gives %0.2lf Celsius\n\n\n", value,(value-273.15));
+                printf("\n%0.2lf Kilograms gives %0.2lf Tonnes\n\n\n", value,(1000*(value)));
                 goto TOP;
             }
-            else if(tempUnit2 == 'F')
+            else if(massUnit2 == 'P')
             {
-                printf("\n%0.2lf Kelvin gives %0.2lf Fahrenheit\n\n\n", value, ((9/5)*(value-273.15)));
+                printf("\n%0.2lf Kilograms gives %0.2lf Kilopounds\n\n\n", value, (453.59237*(value)));
                 goto TOP;
             }
-            else if (tempUnit2 == 'X')
+            else if (massUnit2 == 'X')
             {
-                goto T_START;
+                goto Mass;
             }
             else
             {
                 printf("ERROR! Invalid Input!\n");
                 Sleep(500);
-                goto K_Start;
+                goto Kilograms;
             }
             break;
 
-        case 'C':
-            printf("\nInput the Celsius value you wish to convert:\n");
+        case 'T':
+            printf("\nInput the Tonne value you wish to convert:\n");
             scanf("%lf", &value);     
-            C_Start:
+            Tonne:
             printf("\nWhich unit do you wish to convert this to?\n");
-            printf("Press K for Kelvin\n");
-            printf("Press F for Fahrenheit\n");
+            printf("Press K for Kilogram\n");
+            printf("Press P for Kilopound\n");
             printf("Press X to go back\n\t");
-            scanf("%s", &tempUnit2);
+            scanf("%s", &massUnit2);
 
-            if (tempUnit2 =='K')
+            if (massUnit2 =='K')
             {
-                printf("\n%0.2lf Celsius gives %0.2lf Kelvin\n\n\n", value,(value+273.15));
+                printf("\n%0.2lf Tonnes gives %0.2lf Kilograms\n\n\n", value,(0.001*(value)));
                 goto TOP;
             }
-            else if(tempUnit2 == 'F')
+            else if(massUnit2 == 'P')
             {
-                printf("\n%0.2lf Celsius gives %0.2lf Fahrenheit\n\n\n", value, (((9/5)*value)+32));
+                printf("\n%0.2lf Tonnes gives %0.2lf Kilopounds\n\n\n", value, (0.45359237*(value)));
                 goto TOP;
             }
-            else if(tempUnit2 == 'X')
+            else if(massUnit2 == 'X')
             {
-                goto T_START;
+                goto Mass;
             }
             else
             {
                 printf("ERROR! Invalid Input!\n");
                 Sleep(500);
-                goto C_Start;
+                goto Tonne;
             }
             break;
         
-        case 'F':
-            printf("\nInput the Fahrenheit value you wish to convert:\n");
+        case 'P':
+            printf("\nInput the Kilopound value you wish to convert:\n");
             scanf("%lf", &value);
-            F_Start:
+            Kilopound: //Reference Point
             printf("\nWhich unit do you wish to convert this to?\n");
-            printf("Press K for Kelvin\n");
-            printf("Press C for Celsius\n");
+            printf("Press K for Kilopound\n");
+            printf("Press T for Tonne\n");
             printf("Press X to go back\n\t");
-            scanf("%s", &tempUnit2);
+            scanf("%s", &massUnit2);
 
-            if (tempUnit2 =='K')
+            if (massUnit2 =='K')
             {
-                printf("\n%0.2lf Fahrenheit gives %0.2lf Kelvin\n\n\n", value,(((5/9)*(value-32))+273.15));
+                printf("\n%0.2lf Kilopound gives %0.2lf \n\n\n", value,(0.001*(value)));
                 goto TOP;
             }
             else if(tempUnit2 == 'C')
@@ -240,13 +252,13 @@ int main ()
             }
             else if (tempUnit2== 'X')
             {
-                goto T_START;
+                goto Temperature;
             }
             else
             {
                 printf("ERROR! Invalid Input!\n");
                 Sleep(500);
-                goto F_Start;
+                goto Fahrenheit;
             }
             break;
         case 'X': {
@@ -257,11 +269,12 @@ int main ()
         default:
             printf("ERROR! Enter Valid Temperature Unit\n");
             Sleep(500);
-            goto T_START;
+            goto Temperature;
             break;
         }
         break;
-    
+
+
     case 'L':
         printf("Welcome to Length Converter!");
         
