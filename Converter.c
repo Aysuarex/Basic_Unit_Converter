@@ -299,7 +299,7 @@ int main ()
             scanf("%s", &lengthUnit2);
             if (lengthUnit2 =='M')
             {
-                printf("\n%0.2lf metres gives %0.2lf Miles\n\n\n", value,(1609.344*value);
+                printf("\n%0.2lf metres gives %0.2lf Miles\n\n\n", value,(1609.344*value));
                 goto TOP;
             }
             else if(lengthUnit2 == 'F')
@@ -365,12 +365,12 @@ int main ()
 
             if (lengthUnit2 =='M')
             {
-                printf("\n%0.2lf Feet and %d inches gives %0.2lf Miles\n\n\n", value, value, ((5280*value));
+                printf("\n%0.2lf Feet gives %0.2lf Miles\n\n\n", value, ((5280*(value))));
                 goto TOP;
             }
             else if(lengthUnit2 == 'm')
             {
-                printf("\n%0.2lf Feet and %d inches gives %0.2lf Metres\n\n\n", value, value, (3.28082*value);
+                printf("\n%0.2lf Feet gives %0.2lf Metres\n\n\n", value, ((1/3.28082)*value));
                 goto TOP;
             }
             else if (lengthUnit2== 'X')
