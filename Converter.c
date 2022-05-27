@@ -235,30 +235,30 @@ int main ()
             scanf("%lf", &value);
             Kilopound: //Reference Point
             printf("\nWhich unit do you wish to convert this to?\n");
-            printf("Press K for Kilopound\n");
+            printf("Press K for Kilogram\n");
             printf("Press T for Tonne\n");
             printf("Press X to go back\n\t");
             scanf("%s", &massUnit2);
 
             if (massUnit2 =='K')
             {
-                printf("\n%0.2lf Kilopound gives %0.2lf \n\n\n", value,(0.001*(value)));
+                printf("\n%0.2lf Kilopounds gives %0.2lf Kilograms \n\n\n", value,(0.0022046226*(value)));
                 goto TOP;
             }
-            else if(tempUnit2 == 'C')
+            else if(massUnit2 == 'T')
             {
-                printf("\n%0.2lf Fahrenheit gives %0.2lf Celsius\n\n\n", value, ((5/9)*(value-32)));
+                printf("\n%0.2lf Kilopounds gives %0.2lf Tonnes\n\n\n", value, (2.2046226218*(value)));
                 goto TOP;
             }
-            else if (tempUnit2== 'X')
+            else if (massUnit2== 'X')
             {
-                goto Temperature;
+                goto Mass;
             }
             else
             {
                 printf("ERROR! Invalid Input!\n");
                 Sleep(500);
-                goto Fahrenheit;
+                goto Kilopound;
             }
             break;
         case 'X': {
