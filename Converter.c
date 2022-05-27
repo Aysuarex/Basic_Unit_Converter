@@ -36,7 +36,7 @@ int main ()
 
     switch (category)
     {
-    case 'T':
+    case 'T': {
         Temperature: //Reference Point
         printf("\nWelcome to Temperature Converter!\n");
         printf("Which unit do you wish to convert from?\n");
@@ -82,7 +82,7 @@ int main ()
         case 'C':
             printf("\nInput the Celsius value you wish to convert:\n");
             scanf("%lf", &value);     
-            Celsius:
+            Celsius: //Reference Point
             printf("\nWhich unit do you wish to convert this to?\n");
             printf("Press K for Kelvin\n");
             printf("Press F for Fahrenheit\n");
@@ -114,7 +114,7 @@ int main ()
         case 'F':
             printf("\nInput the Fahrenheit value you wish to convert:\n");
             scanf("%lf", &value);
-            Fahrenheit:
+            Fahrenheit: // Reference Point
             printf("\nWhich unit do you wish to convert this to?\n");
             printf("Press K for Kelvin\n");
             printf("Press C for Celsius\n");
@@ -154,8 +154,9 @@ int main ()
             break;
         }
         break;
+    }
 
-    case 'M':
+    case 'M': {
         Mass: //Reference Point
         printf("\nWelcome to Mass Converter!\n");
         printf("Which unit do you wish to convert from?\n");
@@ -267,30 +268,152 @@ int main ()
             break;
 
         default:
-            printf("ERROR! Enter Valid Temperature Unit\n");
+            printf("ERROR! Enter Valid Mass Unit\n");
             Sleep(500);
-            goto Temperature;
+            goto Mass;
             break;
         }
         break;
+    }
 
-
-    case 'L':
-        printf("Welcome to Length Converter!");
+    case 'L':{
+        Length: //Reference Point
+        printf("\nWelcome to Length Converter!\n");
+        printf("Which unit do you wish to convert from?\n");
+        printf("Press m for Metres\n");
+        printf("Press M for Miles\n");
+        printf("Press F for Feet\n");
+        printf("Press X to go back\n\t");
+        scanf("%s", &lengthUnit1);
         
-        break;
+        switch (lengthUnit1)
+        {
+        case 'm': {
+            printf("\nInput the Metres value you wish to convert:\n");
+            scanf("%lf", &value);
+            Metre: // Reference point
+            printf("\nWhich unit do you wish to convert this to?\n");
+            printf("Press M for Miles\n");
+            printf("Press F for Feet\n");
+            printf("Press X to go back\n\t");
+            scanf("%s", &lengthUnit2);
+            if (lengthUnit2 =='M')
+            {
+                printf("\n%0.2lf metres gives %0.2lf Miles\n\n\n", value,(1609.344*value);
+                goto TOP;
+            }
+            else if(lengthUnit2 == 'F')
+            {
+                printf("\n%0.2lf metres gives %d Feet and %2.d inches\n\n\n", value, (0.3048*value), (0.3048*value));
+                goto TOP;
+            }
+            else if (lengthUnit2 == 'X')
+            {
+                goto Length;
+            }
+            else
+            {
+                printf("ERROR! Invalid Input!\n");
+                Sleep(500);
+                goto Metre;
+            }
+            break;
+        }
 
-    case 'X':
+        case 'M': {
+            printf("\nInput the Miles value you wish to convert:\n");
+            scanf("%lf", &value);     
+            Miles: //Reference Point
+            printf("\nWhich unit do you wish to convert this to?\n");
+            printf("Press m for Metres\n");
+            printf("Press F for Feet\n");
+            printf("Press X to go back\n\t");
+            scanf("%s", &lengthUnit2);
+
+            if (lengthUnit2 =='m')
+            {
+                printf("\n%0.2lf Miles gives %0.2lf Metres\n\n\n", value,((0.000621*value)));
+                goto TOP;
+            }
+            else if(tempUnit2 == 'F')
+            {
+                printf("\n%0.2lf Miles gives %0.2lf Feet\n\n\n", value, ((0.000189*value)));
+                goto TOP;
+            }
+            else if(lengthUnit2 == 'X')
+            {
+                goto Length;
+            }
+            else
+            {
+                printf("ERROR! Invalid Input!\n");
+                Sleep(500);
+                goto Miles;
+            }
+            break;
+        }
+
+        case 'F': {
+            printf("\nInput the Feet value you wish to convert:\n");
+            scanf("%lf", &value);
+            Feet: // Reference Point
+            printf("\nWhich unit do you wish to convert this to?\n");
+            printf("Press M for Miles\n");
+            printf("Press m for Metres\n");
+            printf("Press X to go back\n\t");
+            scanf("%s", &lengthUnit2);
+
+            if (lengthUnit2 =='M')
+            {
+                printf("\n%0.2lf Feet and %d inches gives %0.2lf Miles\n\n\n", value, value, ((5280*value));
+                goto TOP;
+            }
+            else if(lengthUnit2 == 'm')
+            {
+                printf("\n%0.2lf Feet and %d inches gives %0.2lf Metres\n\n\n", value, value, (3.28082*value);
+                goto TOP;
+            }
+            else if (lengthUnit2== 'X')
+            {
+                goto Length;
+            }
+            else
+            {
+                printf("ERROR! Invalid Input!\n");
+                Sleep(500);
+                goto Feet;
+            }
+            break;
+        }    
+        
+        case 'X': {
+            goto TOP;
+            break;
+        }
+
+        default: {
+            printf("ERROR! Enter Valid Temperature Unit\n");
+            Sleep(500);
+            goto Length;
+            break;
+        }
+        break;
+        }
+        }
+
+    case 'X': {
         {
             exit(0);
         }        
         break;
+    }
     
-    default:
+    default: {
         printf("ERROR! Enter Valid Category('T','M','L')\n\n");
         Sleep(1000);
         goto TOP;
         break;
+    }
     }
 
     return 0;
