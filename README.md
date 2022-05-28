@@ -1,7 +1,7 @@
 # Basic Unit Converter
 
 ## Introduction 
-Have you ever been confused about "how many Fahrenheit's make one kelvin?", "Whats the relationship between Kilograms and pounds?" or "How go i convert feet to metres?".  Well, you don't have to worry about that anymore! Because here is a Unit converter made in C language to do all those conversions for you 😃 
+Have you ever been confused about "how many Fahrenheit's make one kelvin?", "Whats the relationship between Kilograms and pounds?🤔" or "How do I convert feet to metres?🤷🏾‍♂️".  Well, you don't have to worry about that anymore! Because here is a Unit converter made in C language to do all those conversions for you 😃 
 
 ## How It works :rocket:
 
