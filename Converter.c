@@ -262,6 +262,7 @@ int main ()
                 goto Pound;
             }
             break;
+
         case 'X': {
             goto TOP;
             }
@@ -299,12 +300,12 @@ int main ()
             scanf("%s", &lengthUnit2);
             if (lengthUnit2 =='M')
             {
-                printf("\n%0.2lf metres gives %0.2lf Miles\n\n\n", value,(1609.344*value));
+                printf("\n%0.2lf metres gives %0.2lf Miles\n\n\n", value,(value/1609.344));
                 goto TOP;
             }
             else if(lengthUnit2 == 'F')
             {
-                printf("\n%0.2lf metres gives %d Feet and %2.d inches\n\n\n", value, (0.3048*value), (0.3048*value));
+                printf("\n%0.2lf metres gives %0.2lf Feet\n\n\n", value, (value/0.3048));
                 goto TOP;
             }
             else if (lengthUnit2 == 'X')
@@ -332,12 +333,12 @@ int main ()
 
             if (lengthUnit2 =='m')
             {
-                printf("\n%0.2lf Miles gives %0.2lf Metres\n\n\n", value,((0.000621*value)));
+                printf("\n%0.2lf Miles gives %0.2lf Metres\n\n\n", value,((value*1609.344)));
                 goto TOP;
             }
-            else if(tempUnit2 == 'F')
+            else if(lengthUnit2 == 'F')
             {
-                printf("\n%0.2lf Miles gives %0.2lf Feet\n\n\n", value, ((0.000189*value)));
+                printf("\n%0.2lf Miles gives %0.2lf Feet\n\n\n", value, ((value*5280)));
                 goto TOP;
             }
             else if(lengthUnit2 == 'X')
@@ -365,7 +366,7 @@ int main ()
 
             if (lengthUnit2 =='M')
             {
-                printf("\n%0.2lf Feet gives %0.2lf Miles\n\n\n", value, ((5280*(value))));
+                printf("\n%0.2lf Feet gives %0.2lf Miles\n\n\n", value, ((0.000189*(value))));
                 goto TOP;
             }
             else if(lengthUnit2 == 'm')
