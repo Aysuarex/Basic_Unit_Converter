@@ -64,7 +64,7 @@ int main ()
             }
             else if(tempUnit2 == 'F')
             {
-                printf("\n%0.2lf Kelvin gives %0.2lf Fahrenheit\n\n\n", value, ((9/5)*(value-273.15)));
+                printf("\n%0.2lf Kelvin gives %0.2lf Fahrenheit\n\n\n", value, (((1.8)*(value-273.15))+32));
                 goto TOP;
             }
             else if (tempUnit2 == 'X')
@@ -96,7 +96,7 @@ int main ()
             }
             else if(tempUnit2 == 'F')
             {
-                printf("\n%0.2lf Celsius gives %0.2lf Fahrenheit\n\n\n", value, (((9/5)*value)+32));
+                printf("\n%0.2lf Celsius gives %0.2lf Fahrenheit\n\n\n", value, (((1.8)*value)+32));
                 goto TOP;
             }
             else if(tempUnit2 == 'X')
@@ -123,12 +123,12 @@ int main ()
 
             if (tempUnit2 =='K')
             {
-                printf("\n%0.2lf Fahrenheit gives %0.2lf Kelvin\n\n\n", value,(((5/9)*(value-32))+273.15));
+                printf("\n%0.2lf Fahrenheit gives %0.2lf Kelvin\n\n\n", value,(((value-32)/(1.8))+273.15));
                 goto TOP;
             }
             else if(tempUnit2 == 'C')
             {
-                printf("\n%0.2lf Fahrenheit gives %0.2lf Celsius\n\n\n", value, ((5/9)*(value-32)));
+                printf("\n%0.2lf Fahrenheit gives %0.2lf Celsius\n\n\n", value, ((value-32)/(1.8)));
                 goto TOP;
             }
             else if (tempUnit2== 'X')
