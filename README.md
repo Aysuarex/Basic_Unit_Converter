@@ -25,7 +25,7 @@ Have you ever been confused about "how many Fahrenheit's make one kelvin?", "Wha
 ## How to Use 👉
 1. Download the ZIP file for this repository
 2. Unzip it on your local device
-3. Double Click 'Converter.exe'
+3. Launch the application
 4. Enjoy 😊
 
 ### Project By [Suara Ayomide](https://twitter.com/aysuarex)
