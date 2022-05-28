@@ -160,31 +160,31 @@ int main ()
         Mass: //Reference Point
         printf("\nWelcome to Mass Converter!\n");
         printf("Which unit do you wish to convert from?\n");
-        printf("Press G for KiloGrams\n");
+        printf("Press K for Kilograms\n");
         printf("Press T for Tonnes\n");
-        printf("Press P for Kilopounds\n");
+        printf("Press P for Pounds\n");
         printf("Press X to go back\n\t");
         scanf("%s", &massUnit1);
         
         switch (massUnit1)
         {
-        case 'G':
+        case 'K':
             printf("\nInput the Kilogram value you wish to convert:\n");
             scanf("%lf", &value);
             Kilograms: // Reference point
             printf("\nWhich unit do you wish to convert this to?\n");
             printf("Press T for Tonnes\n");
-            printf("Press P for Kilopounds\n");
+            printf("Press P for Pounds\n");
             printf("Press X to go back\n\t");
             scanf("%s", &massUnit2);
             if (massUnit2 =='T')
             {
-                printf("\n%0.2lf Kilograms gives %0.2lf Tonnes\n\n\n", value,(1000*(value)));
+                printf("\n%0.2lf Kilograms gives %0.2lf Tonnes\n\n\n", value,((value)/1000));
                 goto TOP;
             }
             else if(massUnit2 == 'P')
             {
-                printf("\n%0.2lf Kilograms gives %0.2lf Kilopounds\n\n\n", value, (453.59237*(value)));
+                printf("\n%0.2lf Kilograms gives %0.2lf Pounds\n\n\n", value, (value*2.20462));
                 goto TOP;
             }
             else if (massUnit2 == 'X')
@@ -205,18 +205,18 @@ int main ()
             Tonne:
             printf("\nWhich unit do you wish to convert this to?\n");
             printf("Press K for Kilogram\n");
-            printf("Press P for Kilopound\n");
+            printf("Press P for Pound\n");
             printf("Press X to go back\n\t");
             scanf("%s", &massUnit2);
 
             if (massUnit2 =='K')
             {
-                printf("\n%0.2lf Tonnes gives %0.2lf Kilograms\n\n\n", value,(0.001*(value)));
+                printf("\n%0.2lf Tonnes gives %0.2lf Kilograms\n\n\n", value,(1000*(value)));
                 goto TOP;
             }
             else if(massUnit2 == 'P')
             {
-                printf("\n%0.2lf Tonnes gives %0.2lf Kilopounds\n\n\n", value, (0.45359237*(value)));
+                printf("\n%0.2lf Tonnes gives %0.2lf Pounds\n\n\n", value, ((value)*2204.62));
                 goto TOP;
             }
             else if(massUnit2 == 'X')
@@ -232,9 +232,9 @@ int main ()
             break;
         
         case 'P':
-            printf("\nInput the Kilopound value you wish to convert:\n");
+            printf("\nInput the Pound value you wish to convert:\n");
             scanf("%lf", &value);
-            Kilopound: //Reference Point
+            Pound: //Reference Point
             printf("\nWhich unit do you wish to convert this to?\n");
             printf("Press K for Kilogram\n");
             printf("Press T for Tonne\n");
@@ -243,12 +243,12 @@ int main ()
 
             if (massUnit2 =='K')
             {
-                printf("\n%0.2lf Kilopounds gives %0.2lf Kilograms \n\n\n", value,(0.0022046226*(value)));
+                printf("\n%0.2lf Pounds gives %0.2lf Kilograms \n\n\n", value,((value)/(2.2046226)));
                 goto TOP;
             }
             else if(massUnit2 == 'T')
             {
-                printf("\n%0.2lf Kilopounds gives %0.2lf Tonnes\n\n\n", value, (2.2046226218*(value)));
+                printf("\n%0.2lf Pounds gives %0.2lf Tonnes\n\n\n", value, ((value)/(2204.6226218)));
                 goto TOP;
             }
             else if (massUnit2== 'X')
@@ -259,7 +259,7 @@ int main ()
             {
                 printf("ERROR! Invalid Input!\n");
                 Sleep(500);
-                goto Kilopound;
+                goto Pound;
             }
             break;
         case 'X': {
